@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWARA TRADE SOLUTIONS PRIVATE LIMITED | Official Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- 1. Global Variables & Reset --- */
+        :root {
+            --bg-body: #0B0F19;
+            --bg-card: #151B2B;
+            --bg-accent: #1F2937;
+            --primary: #6366f1;
+            --secondary: #06b6d4;
+            --accent: #f43f5e;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; object-fit: cover; }
+
+        /* --- 2. Utility Classes --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 3. Navigation (Module 1) --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary);
+        }
+
+        /* --- 4. Hero Section (Module 2) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(rgba(11, 15, 25, 0.7), rgba(11, 15, 25, 0.9)), 
+                        url('https://picsum.photos/id/4/1920/1080') no-repeat center/cover;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- 5. Partners/Trust Endorsement (Module 3) --- */
+        .brands {
+            background: var(--bg-card);
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .brands-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            opacity: 0.6;
+            gap: 20px;
+        }
+        
+        .brands i { font-size: 2rem; }
+
+        /* --- 6. About Us Brief (Module 4) --- */
+        .about-brief {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+        
+        .about-img img {
+            border-radius: 10px;
+            box-shadow: -20px 20px 0 var(--primary);
+        }
+
+        /* --- 7. Core Values (Module 5) --- */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .value-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        /* --- 8-11. Service Details (Module 6, 7, 8, 9) --- */
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .service-row.reverse {
+            direction: rtl;
+        }
+        
+        .service-row.reverse .service-text {
+            direction: ltr;
+        }
+
+        .service-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .service-text ul {
+            margin-top: 20px;
+        }
+        .service-text li {
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+        .service-text li i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        .service-img img {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
+            height: 400px;
+        }
+
+        /* --- 12. Process (Module 10, 11, 12, 13) --- */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-body);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .step-item:hover .step-icon {
+            background: var(--primary);
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        /* --- 13. Statistics (Module 14) --- */
+        .stats-section {
+            background: linear-gradient(rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+        }
+        .stat-item p { color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- 14. Portfolio (Module 15) --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 250px;
+            group: cursor;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(11, 15, 25, 0.9);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover img { transform: scale(1.1); }
+        .portfolio-item:hover .portfolio-overlay { bottom: 0; }
+
+        /* --- 15. Tech Stack (Module 16) --- */
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .tech-tag {
+            padding: 10px 20px;
+            background: var(--bg-accent);
+            border-radius: 5px;
+            color: white;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tech-tag:hover { border-color: var(--secondary); background: var(--bg-card); }
+
+        /* --- 16. Team Members (Module 17) --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .team-img { height: 250px; width: 100%; object-fit: cover; }
+        .team-info { padding: 20px; }
+        .team-role { color: var(--secondary); font-size: 0.9rem; margin-bottom: 10px; display: block; }
+
+        /* --- 17. FAQ (Module 18) --- */
+        .faq-item {
+            background: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .faq-item:hover { border-color: var(--border); }
+        .faq-question { font-weight: 600; display: flex; justify-content: space-between; }
+        .faq-answer { margin-top: 15px; color: var(--text-muted); display: none; padding-top: 15px; border-top: 1px solid var(--border); }
+        .faq-item.active .faq-answer { display: block; }
+
+        /* --- 18. CTA (Module 19) --- */
+        .cta-section {
+            background: linear-gradient(135deg, var(--bg-card), #262044);
+            text-align: center;
+            border-radius: 20px;
+            margin: 80px 20px;
+            padding: 80px 20px;
+        }
+
+        /* --- 19. Contact (Module 20) --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info-box {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            background: var(--bg-accent);
+            border: 1px solid var(--border);
+            padding: 15px;
+            color: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* --- 20. Footer --- */
+        footer {
+            background: #05080f;
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .service-row, .about-brief, .contact-wrapper, .footer-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .process-steps::before { display: none; }
+            .service-row.reverse { direction: ltr; }
+            .service-img img { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-code-branch"></i>
+                SWARA TRADE SOLUTIONS
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Solutions</a></li>
+                    <li><a href="#process">Development Process</a></li>
+                    <li><a href="#portfolio">Case Studies</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content reveal">
+            <h1 style="margin-bottom: 10px;"><span style="font-size: 1.2em;">SWARA TRADE SOLUTIONS PRIVATE LIMITED</span></h1>
+            <h1>Building Digital Futures<br><span>Driving Business Intelligence</span></h1>
+            <p>SWARA TRADE SOLUTIONS PRIVATE LIMITED is dedicated to providing exceptional software development services. From bespoke systems to mobile applications, we connect your vision with reality through code.</p>
+            <div style="margin-top: 30px;">
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#portfolio" class="btn btn-outline" style="margin-left: 15px;">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="brands">
+        <div class="container brands-grid">
+            <i class="fa-brands fa-aws"></i>
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-microsoft"></i>
+            <i class="fa-brands fa-vuejs"></i>
+            <i class="fa-brands fa-react"></i>
+            <i class="fa-brands fa-docker"></i>
+        </div>
+    </div>
+
+    <section id="about" class="section-padding">
+        <div class="container about-brief">
+            <div class="about-text reveal">
+                <h4 style="color: var(--secondary); text-transform: uppercase; margin-bottom: 10px;">Who We Are</h4>
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Software Solutions Experts<br>Focused on Technical Innovation</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    Founded in the United Kingdom, SWARA TRADE SOLUTIONS PRIVATE LIMITED is a high-tech enterprise specialising in software development. We don't just write code; we build digital ecosystems that solve real business challenges.
+                </p>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    Our team comprises senior full-stack engineers, UI/UX designers, and product specialists, committed to delivering high-standard software products with rigorous logic and creative design.
+                </p>
+                <a href="#team" class="btn btn-outline">Meet the Team <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="about-img reveal">
+                <img src="https://picsum.photos/id/1/600/400" alt="About Office">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: #0f131f;">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Rapid Delivery</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Utilising agile development methodologies for fast iteration, ensuring projects launch on time and seize market opportunities.</p>
+                </div>
+                <div class="value-card reveal">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Security & Stability</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Enterprise-grade security architecture with comprehensive data protection, ensuring 99.9% system uptime.</p>
+                </div>
+                <div class="value-card reveal">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Innovation Driven</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Keeping pace with AI and big data前沿 technologies, injecting intelligent transformation into traditional businesses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Core Business Areas</h2>
+                <p>We provide full lifecycle digital services to meet enterprise needs at every stage</p>
+            </div>
+
+            <div class="service-row reveal">
+                <div class="service-img">
+                    <img src="https://picsum.photos/id/60/600/400" alt="Web Development">
+                </div>
+                <div class="service-text">
+                    <h3>Bespoke Enterprise Software</h3>
+                    <p>Tailored ERP, CRM, and OA management systems designed for your specific business processes, breaking down information silos and enhancing operational efficiency.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Business process梳理 and redesign</li>
+                        <li><i class="fa-solid fa-check"></i> Complex data reporting and visualisation</li>
+                        <li><i class="fa-solid fa-check"></i> High-concurrency architecture design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-row reverse reveal">
+                <div class="service-img">
+                    <img src="https://picsum.photos/id/119/600/400" alt="Mobile App">
+                </div>
+                <div class="service-text">
+                    <h3>Mobile App & Mini Programme Development</h3>
+                    <p>Covering iOS, Android ecosystems. We create流畅, naturally interactive mobile products to help you reach every user.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Native and hybrid development technologies</li>
+                        <li><i class="fa-solid fa-check"></i> Perfect UI/UX interaction experience</li>
+                        <li><i class="fa-solid fa-check"></i> App Store optimisation and deployment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-row reveal">
+                <div class="service-img">
+                    <img src="https://picsum.photos/id/180/600/400" alt="Web Design">
+                </div>
+                <div class="service-text">
+                    <h3>Brand Websites & E-commerce Platforms</h3>
+                    <p>From premium brand showcase sites to complex B2B/B2C e-commerce platforms, we provide one-stop website services balancing aesthetics and SEO optimisation.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Responsive design,适配 all devices</li>
+                        <li><i class="fa-solid fa-check"></i> Search Engine Optimisation (SEO) friendly</li>
+                        <li><i class="fa-solid fa-check"></i> Secure payment gateway integration</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-row reverse reveal" style="margin-bottom: 0;">
+                <div class="service-img">
+                    <img src="https://picsum.photos/id/20/600/400" alt="Tech Consulting">
+                </div>
+                <div class="service-text">
+                    <h3>Cloud Computing & Digital Transformation Consulting</h3>
+                    <p>Assisting enterprises with cloud migration, planning digital transformation pathways. Providing server maintenance, database optimisation, and cybersecurity solutions.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> AWS/Azure/GCP architecture deployment</li>
+                        <li><i class="fa-solid fa-check"></i> Automated operations (DevOps)</li>
+                        <li><i class="fa-solid fa-check"></i> Legacy system升级 and migration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section-padding" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Standard Development Process</h2>
+                <p>Transparent,规范 four-step process ensuring high-quality delivery for every project</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-item reveal" style="transition-delay: 0.1s;">
+                    <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h4>1. Requirements Analysis</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">In-depth communication to identify business pain points, output detailed requirements documentation.</p>
+                </div>
+                <div class="step-item reveal" style="transition-delay: 0.2s;">
+                    <div class="step-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                    <h4>2. Prototype Design</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Interactive prototypes and UI visual design to confirm product form.</p>
+                </div>
+                <div class="step-item reveal" style="transition-delay: 0.3s;">
+                    <div class="step-icon"><i class="fa-solid fa-code"></i></div>
+                    <h4>3. System Development</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Frontend and backend coding with rigorous code review and unit testing.</p>
+                </div>
+                <div class="step-item reveal" style="transition-delay: 0.4s;">
+                    <div class="step-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                    <h4>4. Testing & Deployment</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Full-chain testing, server deployment, and training handover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item reveal">
+                <h3>50+</h3>
+                <p>Enterprise Clients</p>
+            </div>
+            <div class="stat-item reveal">
+                <h3>120+</h3>
+                <p>Successful Projects</p>
+            </div>
+            <div class="stat-item reveal">
+                <h3>100%</h3>
+                <p>Delivery Satisfaction</p>
+            </div>
+            <div class="stat-item reveal">
+                <h3>24/7</h3>
+                <p>Technical Support</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Featured Case Studies</h2>
+                <p>We've helped clients achieve飞跃 in commercial value through technology</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal">
+                    <img src="https://picsum.photos/id/48/400/300" alt="Project 1">
+                    <div class="portfolio-overlay">
+                        <h4>Intelligent Logistics System</h4>
+                        <p style="font-size: 0.9rem; color: #ddd;">ERP / Big Data</p>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://picsum.photos/id/3/400/300" alt="Project 2">
+                    <div class="portfolio-overlay">
+                        <h4>Cross-border E-commerce Site</h4>
+                        <p style="font-size: 0.9rem; color: #ddd;">Web / Payment Integration</p>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://picsum.photos/id/119/400/300" alt="Project 3">
+                    <div class="portfolio-overlay">
+                        <h4>Online Education Platform</h4>
+                        <p style="font-size: 0.9rem; color: #ddd;">Web App / Live Streaming</p>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://picsum.photos/id/201/400/300" alt="Project 4">
+                    <div class="portfolio-overlay">
+                        <h4>Healthcare Data Analytics</h4>
+                        <p style="font-size: 0.9rem; color: #ddd;">SaaS / Data Visualisation</p>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://picsum.photos/id/366/400/300" alt="Project 5">
+                    <div class="portfolio-overlay">
+                        <h4>Smart Campus IoT System</h4>
+                        <p style="font-size: 0.9rem; color: #ddd;">IoT / Hardware Integration</p>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="https://picsum.photos/id/445/400/300" alt="Project 6">
+                    <div class="portfolio-overlay">
+                        <h4>Enterprise Collaboration OA</h4>
+                        <p style="font-size: 0.9rem; color: #ddd;">Internal Management / Workflow Engine</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Cutting-edge Technology Stack</h2>
+                <p>We never limit ourselves to a single technology, always choosing the right tool for each project</p>
+            </div>
+            <div class="tech-grid reveal">
+                <div class="tech-tag"><i class="fa-brands fa-java"></i> Java Spring Boot</div>
+                <div class="tech-tag"><i class="fa-brands fa-python"></i> Python / Django</div>
+                <div class="tech-tag"><i class="fa-brands fa-js"></i> Node.js</div>
+                <div class="tech-tag"><i class="fa-brands fa-vuejs"></i> Vue.js 3</div>
+                <div class="tech-tag"><i class="fa-brands fa-react"></i> React Native</div>
+                <div class="tech-tag"><i class="fa-brands fa-swift"></i> Swift</div>
+                <div class="tech-tag"><i class="fa-solid fa-database"></i> MySQL / Redis</div>
+                <div class="tech-tag"><i class="fa-brands fa-docker"></i> Docker / K8s</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Core Team</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card reveal">
+                    <img src="https://picsum.photos/id/1005/400/400" class="team-img" alt="Member">
+                    <div class="team-info">
+                        <h4>James Wilson</h4>
+                        <span class="team-role">Technical Director / CTO</span>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">10 years full-stack development experience, expert in high-concurrency architecture design.</p>
+                    </div>
+                </div>
+                <div class="team-card reveal">
+                    <img src="https://picsum.photos/id/1011/400/400" class="team-img" alt="Member">
+                    <div class="team-info">
+                        <h4>Sarah Thompson</h4>
+                        <span class="team-role">Product Director</span>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Specialist in business梳理 and user experience design, led multiple million-pound projects.</p>
+                    </div>
+                </div>
+                <div class="team-card reveal">
+                    <img src="https://picsum.photos/id/1025/400/400" class="team-img" alt="Member">
+                    <div class="team-info">
+                        <h4>David Chen</h4>
+                        <span class="team-role">Senior Frontend Engineer</span>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Pixel-perfect追求者, focused on creating exceptional interaction experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: var(--bg-card);">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-title reveal">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <div class="faq-question">How much does it cost to develop software? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Software development costs depend on feature complexity and platform requirements. We provide transparent quotations based on detailed requirements breakdown. Simple showcase projects start from a few thousand pounds, whilst complex systems are assessed based on working hours.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">What is the typical development timeline? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Simple applications or corporate websites typically take 2-4 weeks. Medium to large bespoke systems usually require 2-3 months. We create strict timelines to ensure on-time delivery.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">Do you provide after-sales maintenance? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer">Yes, we offer a standard one-year free technical maintenance period, including bug fixes and basic server maintenance. Extended maintenance services are available after the initial period.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="cta-section reveal">
+            <h2 style="margin-bottom: 20px;">Ready to Start Your Digital Journey?</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Whether you're a startup or industry leader, SWARA TRADE SOLUTIONS PRIVATE LIMITED is your trusted technology partner.</p>
+            <a href="#contact" class="btn btn-primary">Get Free Project Quote</a>
+        </div>
+    </div>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Contact Us</h2>
+                <p>We look forward to hearing your ideas</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info-box reveal">
+                    <h3 style="margin-bottom: 30px; font-size: 1.5rem;">SWARA TRADE SOLUTIONS PRIVATE LIMITED</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Office Address</strong>
+                            <p style="color: var(--text-muted);">304, Gauri Complex, Sec11, Plot 19, Cbd Belapur, Thane</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>Email Address</strong>
+                            <p style="color: var(--text-muted);">contact@swaratradesolutions.bond</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Phone Number</strong>
+                            <p style="color: var(--text-muted);">8945734469</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <img src="https://picsum.photos/id/1/500/200" alt="Map Placeholder" style="border-radius: 8px; opacity: 0.6;">
+                    </div>
+                </div>
+
+                <form class="contact-form reveal">
+                    <h3 style="margin-bottom: 20px;">Send Us a Message</h3>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number">
+                    <textarea rows="5" placeholder="Please briefly describe your requirements..." required></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="color: white; margin-bottom: 20px;">SWARA TRADE SOLUTIONS PRIVATE LIMITED</h4>
+                    <p style="max-width: 300px;">We focus on helping clients enhance business efficiency and create sustainable value through advanced software technology.</p>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 20px;">Quick Links</h4>
+                    <ul style="line-height: 2;">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Core Services</a></li>
+                        <li><a href="#portfolio">Case Studies</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 20px;">Follow Us</h4>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter fa-lg"></i></a>
+                        <a href="#"><i class="fa-brands fa-github fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SWARA TRADE SOLUTIONS PRIVATE LIMITED All Rights Reserved | Software Development | Technical Services</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // 2. FAQ Toggle Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                faqItems.forEach(i => {
+                    if(i !== item) i.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+        // 3. Form Submission Handler (Demo)
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! Our project manager will contact you shortly.');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
